@@ -1,0 +1,1 @@
+Convert the UTF-8 encoded .bat file to ANSI encoding after downloading to resolve the garbled text issue.
