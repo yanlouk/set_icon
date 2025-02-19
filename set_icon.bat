@@ -1,15 +1,15 @@
 @Echo off & Color 0b & MODE con: COLS=60 LINES=12 >nul 
-@Title by ÑÌÂ¥   ÅúÁ¿¸ü¸ÄÎÄ¼ş¼ĞÍ¼±ê¹¤¾ß
+@Title by Vaidurya   æ‰¹é‡æ›´æ”¹æ–‡ä»¶å¤¹å›¾æ ‡å·¥å…·
 
-:: Æô¶¯Í¬Ä¿Â¼ÏÂµÄÁíÒ»¸öÈí¼ş
-set "software=Í¼±êÌáÈ¡×ª»»Æ÷.exe"
+:: å¯åŠ¨åŒç›®å½•ä¸‹çš„å¦ä¸€ä¸ªè½¯ä»¶
+set "software=å›¾æ ‡æå–è½¬æ¢å™¨.exe"
 set "software_pid="
 if exist "%~dp0%software%" (
     start "" "%~dp0%software%"
     for /f "tokens=2 delims=," %%i in ('tasklist /fi "IMAGENAME eq %software%" /fo csv /nh') do set "software_pid=%%i"
-    echo Èí¼ş "%software%" ÒÑÆô¶¯£¬½ø³ÌIDÎª %software_pid%¡£
+    echo è½¯ä»¶ "%software%" å·²å¯åŠ¨ï¼Œè¿›ç¨‹IDä¸º %software_pid%ã€‚
 ) else (
-    echo ¾¯¸æ£ºÎ´ÕÒµ½ %software%£¬³ÌĞò½«¼ÌĞøÔËĞĞ¡£
+    echo è­¦å‘Šï¼šæœªæ‰¾åˆ° %software%ï¼Œç¨‹åºå°†ç»§ç»­è¿è¡Œã€‚
     pause
 )
 
@@ -17,29 +17,29 @@ if exist "%~dp0%software%" (
 echo. 
 echo      *************************************************
 echo      *                                               *
-echo      *   1. ÎªÃ¿¸öÍ¼±êÎÄ¼ş´´½¨Í¬ÃûÎÄ¼ş¼Ğ²¢ÉèÖÃÍ¼±ê   *
-echo      *        Çë°ÑÍ¼±êºÍ±¾Åú´¦Àí·ÅÔÚÍ¬Ò»¸öÄ¿Â¼ÏÂ     *
+echo      *   1. ä¸ºæ¯ä¸ªå›¾æ ‡æ–‡ä»¶åˆ›å»ºåŒåæ–‡ä»¶å¤¹å¹¶è®¾ç½®å›¾æ ‡   *
+echo      *        è¯·æŠŠå›¾æ ‡å’Œæœ¬æ‰¹å¤„ç†æ”¾åœ¨åŒä¸€ä¸ªç›®å½•ä¸‹     *
 echo      *                                               *
-echo      *   2. ÎªÒÑÓĞÎÄ¼ş¼ĞÉèÖÃÍ¼±ê                     *
-echo      *        Í¼±êÎÄ¼şÔÚÎÄ¼ş¼ĞÄÚ                     *
+echo      *   2. ä¸ºå·²æœ‰æ–‡ä»¶å¤¹è®¾ç½®å›¾æ ‡                     *
+echo      *        å›¾æ ‡æ–‡ä»¶åœ¨æ–‡ä»¶å¤¹å†…                     *
 echo      *                                               *
-echo      *   °´ÈÎÒâ¼ü»òµÈ´ı5Ãë¼´¿É¿ªÊ¼ £¡                * 
-echo      *                                  -by ÑÌÂ¥     *
+echo      *   æŒ‰ä»»æ„é”®æˆ–ç­‰å¾…5ç§’å³å¯å¼€å§‹ ï¼                * 
+echo      *                                  -by Vaidurya     *
 echo      *************************************************
 echo. 
 ::----------------------------------------------------------------
 @timeout /t 5 >nul
 ::----------------------------------------------------------------
 
-:: ÌáÊ¾ÓÃ»§Ñ¡Ôñ¹¦ÄÜ
-set /p choice=ÇëÑ¡Ôñ¹¦ÄÜ£¨ÊäÈë1»ò2£©£º
+:: æç¤ºç”¨æˆ·é€‰æ‹©åŠŸèƒ½
+set /p choice=è¯·é€‰æ‹©åŠŸèƒ½ï¼ˆè¾“å…¥1æˆ–2ï¼‰ï¼š
 if "%choice%"=="1" goto option1
 if "%choice%"=="2" goto option2
-echo ÎŞĞ§µÄÑ¡Ïî£¬ÇëÖØĞÂÔËĞĞ½Å±¾¡£
+echo æ— æ•ˆçš„é€‰é¡¹ï¼Œè¯·é‡æ–°è¿è¡Œè„šæœ¬ã€‚
 pause
 exit
 
-:: Ñ¡Ïî1£ºÎªÃ¿¸öÍ¼±êÎÄ¼ş´´½¨Í¬ÃûÎÄ¼ş¼Ğ²¢ÉèÖÃÍ¼±ê
+:: é€‰é¡¹1ï¼šä¸ºæ¯ä¸ªå›¾æ ‡æ–‡ä»¶åˆ›å»ºåŒåæ–‡ä»¶å¤¹å¹¶è®¾ç½®å›¾æ ‡
 :option1
 for /f "tokens=*" %%i in ('dir /b /a-d *.ico') do ( 
     md "%%~ni">nul
@@ -54,7 +54,7 @@ for /f "tokens=*" %%i in ('dir /b /a-d *.ico') do (
 )
 goto end
 
-:: Ñ¡Ïî2£ºÎªÒÑÓĞÎÄ¼ş¼ĞÉèÖÃÍ¼±ê£¨Í¼±êÎÄ¼şÔÚÎÄ¼ş¼ĞÄÚ£©
+:: é€‰é¡¹2ï¼šä¸ºå·²æœ‰æ–‡ä»¶å¤¹è®¾ç½®å›¾æ ‡ï¼ˆå›¾æ ‡æ–‡ä»¶åœ¨æ–‡ä»¶å¤¹å†…ï¼‰
 :option2
 for /d %%f in (*) do (
     for %%i in ("%%f\*.ico") do (
@@ -68,25 +68,25 @@ for /d %%f in (*) do (
 )
 goto end
 
-:: ½áÊøÌáÊ¾
+:: ç»“æŸæç¤º
 :end
 echo.
-echo ²Ù×÷Íê³É£¡ÈôÎÄ¼ş¼ĞÍ¼±êĞŞ¸Ä³É¹¦¡£
+echo æ“ä½œå®Œæˆï¼è‹¥æ–‡ä»¶å¤¹å›¾æ ‡ä¿®æ”¹æˆåŠŸã€‚
 echo.
-echo ÈôÎÄ¼ş¼ĞÍ¼±êÎŞ±ä»¯£¬ÇëÑ¡ÔñÒÔÏÂ²Ù×÷£º
-echo    °´ 1 Ë¢ĞÂÍ¼±ê»º´æ
-echo    °´ Enter ÍË³ö³ÌĞò
+echo è‹¥æ–‡ä»¶å¤¹å›¾æ ‡æ— å˜åŒ–ï¼Œè¯·é€‰æ‹©ä»¥ä¸‹æ“ä½œï¼š
+echo    æŒ‰ 1 åˆ·æ–°å›¾æ ‡ç¼“å­˜
+echo    æŒ‰ Enter é€€å‡ºç¨‹åº
 
-:: µÈ´ıÓÃ»§ÊäÈë»ò×Ô¶¯ÍË³ö
+:: ç­‰å¾…ç”¨æˆ·è¾“å…¥æˆ–è‡ªåŠ¨é€€å‡º
 set "input="
-set /p input=ÇëÊäÈëÄúµÄÑ¡Ôñ (1 »ò °´ Enter ÍË³ö): 
+set /p input=è¯·è¾“å…¥æ‚¨çš„é€‰æ‹© (1 æˆ– æŒ‰ Enter é€€å‡º): 
 if "%input%"=="1" call :clearcache
-if "%input%"=="" goto exit  :: Èç¹ûÖ±½Ó°´»Ø³µ£¬Ò²ÍË³ö
+if "%input%"=="" goto exit  :: å¦‚æœç›´æ¥æŒ‰å›è½¦ï¼Œä¹Ÿé€€å‡º
 goto exit
 
-:: ÇåÀíÍ¼±ê»º´æ
+:: æ¸…ç†å›¾æ ‡ç¼“å­˜
 :clearcache
-echo ÕıÔÚÇåÀíÍ¼±ê»º´æ£¬ÇëÉÔºò...
+echo æ­£åœ¨æ¸…ç†å›¾æ ‡ç¼“å­˜ï¼Œè¯·ç¨å€™...
 taskkill /f /im explorer.exe
 attrib -h -s -r "%userprofile%\AppData\Local\IconCache.db"
 del /f "%userprofile%\AppData\Local\IconCache.db"
@@ -95,11 +95,11 @@ del /f "%userprofile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_*.db"
 echo y|reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v IconStreams
 echo y|reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v PastIconsStream
 start explorer
-echo Í¼±ê»º´æÒÑË¢ĞÂ£¬³ÌĞò¼´½«ÍË³ö¡£
+echo å›¾æ ‡ç¼“å­˜å·²åˆ·æ–°ï¼Œç¨‹åºå³å°†é€€å‡ºã€‚
 goto exit
 
-:: ÍË³ö³ÌĞò
+:: é€€å‡ºç¨‹åº
 :exit
-echo ³ÌĞòÒÑÍË³ö¡£
+echo ç¨‹åºå·²é€€å‡ºã€‚
 taskkill /f /pid %software_pid%
 endlocal & exit
