@@ -43,13 +43,13 @@ exit
 :option1
 for /f "tokens=*" %%i in ('dir /b /a-d *.ico') do ( 
     md "%%~ni">nul
-    ren "%%i" "&M&m-gb5l-SgSN-%%i"
-    move "&M&m-gb5l-SgSN-%%i" "%%~ni\">nul
+    ren "%%i" "XyZz-Icon-Temp-%%i"
+    move "XyZz-Icon-Temp-%%i" "%%~ni\">nul
     (echo [.ShellClassInfo]
-     echo IconResource="&M&m-gb5l-SgSN-%%i",0
+     echo IconResource="XyZz-Icon-Temp-%%i",0
      )>"%%~ni\desktop.ini"
     attrib +s +h "%%~ni\desktop.ini"
-    attrib +s +h "%%~ni\&M&m-gb5l-SgSN-%%i"
+    attrib +s +h "%%~ni\XyZz-Icon-Temp-%%i"
     attrib +r /s /d "%%~ni"
 )
 goto end
